@@ -22,8 +22,8 @@ alias gl='git l'
 alias bl='git l master..HEAD'
 
 # tmux aliases
-tmux='tmux -2'
-tls='tmux ls'
-ta='tmux attach -t'
-tnew='tmux new -s'
-tkill='tmux kill-session -t'
+alias tmux='tmux -2'
+alias tls='tmux ls'
+alias ta='tmux attach -t'
+alias tnew='tmux new -s'
+alias tkill='tmux kill-session -t'
