@@ -1,0 +1,22 @@
+# Grep the processlist
+alias pg='ps aux | egrep -i'
+
+# cat output colored
+alias cat='pygmentize -g'
+
+# Output extra info, hidden files, unit suffixes and symbols after each type of file
+alias ll='ls -lahF'
+
+# Find files
+alias f='find . -name'
+
+# Rsync over ssh
+alias rs='rsync -avz --partial --progress --rsh=ssh'
+
+# Git aliases
+alias gs='git st'
+alias gd='git d'
+alias ga='git add'
+alias gc='git checkout'
+alias gl='git l'
+alias bl='git l master..HEAD'

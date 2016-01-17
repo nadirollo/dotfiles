@@ -82,9 +82,8 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+source .zsh_aliases
 # The same as cat but with colored output, requires python library pygmentize
-alias dog='pygmentize -g'
 
 # Set default user to hide the user@hostname when running on zsh on the workstation
 DEFAULT_USER=nadir
