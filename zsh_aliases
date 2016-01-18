@@ -27,3 +27,6 @@ alias tls='tmux ls'
 alias ta='tmux attach -t'
 alias tnew='tmux new -s'
 alias tkill='tmux kill-session -t'
+
+# reload zsh config
+alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
