@@ -35,6 +35,9 @@ set expandtab
 set mouse=a
 " Disables things like word wrap and auto-indent
 set paste
+" Set temporary directory for swapfiles
+set dir=~/tmp
+
 
 " NERDTree Configuration "
 " Open filesystem navigator if no file is specified
