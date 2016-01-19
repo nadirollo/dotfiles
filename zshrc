@@ -100,3 +100,6 @@ export HISTSIZE=10000
 setopt hist_ignore_space
 # Ignore duplicates
 setopt hist_ignore_all_dups
+# Don't share the history between tabs
+unsetopt inc_append_history
+unsetopt share_history

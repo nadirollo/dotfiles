@@ -2,7 +2,7 @@
 alias pg='ps aux | egrep -i'
 
 # cat output colored
-alias cat='pygmentize -g'
+alias dog='pygmentize -g'
 
 # Output extra info, hidden files, unit suffixes and symbols after each type of file
 alias ll='ls -lahF'
