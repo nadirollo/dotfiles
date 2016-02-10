@@ -30,3 +30,9 @@ alias tkill='tmux kill-session -t'
 
 # reload zsh config
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+
+# jira aliases
+# Requires having installed https://marketplace.atlassian.com/plugins/org.swift.jira.cli/cloud/overview in your PATH
+alias jbug="jira -a createIssue --project IN --type Bug --assignee '' --summary "
+alias jstory="jira -a createIssue --project IN --type Story --assignee '' --summary "
+alias jepic="jira -a createIssue --project IN --type Epic --assignee '' --summary "
