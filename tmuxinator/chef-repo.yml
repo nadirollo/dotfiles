@@ -31,5 +31,5 @@ windows:
   - editor:
       layout: a9d4,181x35,0,0[181x27,0,0,0,181x7,0,28,2]
       panes:
-        - vim -O environments/prod-1.json enviornments/staging.json environments/qa-1.json environments/office-lon1.json
+        - vim -O environments/prod-1.json environments/staging.json environments/qa-1.json environments/office-lon1.json
         - 
