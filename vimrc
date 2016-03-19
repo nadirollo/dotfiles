@@ -16,6 +16,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'djoshea/vim-autoread'
 " Better JSON for vim
 Plugin 'elzr/vim-json'
+" Chef navigation
+Plugin 't9md/vim-chef'
 call vundle#end()
 filetype plugin indent on
 " END
