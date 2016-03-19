@@ -12,6 +12,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 " Solarized color scheme
 Plugin 'altercation/vim-colors-solarized'
+" Autoread files changed outside the buffer
+Plugin 'djoshea/vim-autoread'
+" Better JSON for vim
+Plugin 'elzr/vim-json'
 call vundle#end()
 filetype plugin indent on
 " END
@@ -35,6 +39,8 @@ set expandtab
 set mouse=a
 " Disables things like word wrap and auto-indent
 set paste
+
+
 
 
 " NERDTree Configuration "
