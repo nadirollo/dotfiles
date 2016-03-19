@@ -51,3 +51,7 @@
   added     = yellow
   changed   = green
   untracked = cyan
+
+# Go glide shenanigans
+[url "git@github.com:"]
+  insteadOf = https://github.com/'
