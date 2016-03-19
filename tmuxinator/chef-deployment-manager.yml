@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-deployment-manager.yml
 
 name: chef-deployment-manager
-root: ~/workspace/lmn/cookbooks/chef-deployment-manager
+root: ~/workspace/lmn/cookbooks/deployment-manager
 
 # Optional tmux socket
 # socket_name: foo

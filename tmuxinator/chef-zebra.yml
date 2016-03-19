@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-zebra.yml
 
 name: chef-zebra
-root: ~/workspace/lmn/cookbooks/chef-zebra
+root: ~/workspace/lmn/cookbooks/zebra
 
 # Optional tmux socket
 # socket_name: foo

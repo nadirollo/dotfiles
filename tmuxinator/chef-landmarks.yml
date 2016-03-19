@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-landmarks.yml
 
 name: chef-landmarks
-root: ~/workspace/lmn/cookbooks/chef-landmarks
+root: ~/workspace/lmn/cookbooks/landmarks
 
 # Optional tmux socket
 # socket_name: foo

@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-sputnik.yml
 
 name: chef-sputnik
-root: ~/workspace/lmn/cookbooks/chef-sputnik
+root: ~/workspace/lmn/cookbooks/sputnik
 
 # Optional tmux socket
 # socket_name: foo

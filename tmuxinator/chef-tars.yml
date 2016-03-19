@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-tars.yml
 
 name: chef-tars
-root: ~/workspace/lmn/cookbooks/chef-tars
+root: ~/workspace/lmn/cookbooks/tars
 
 # Optional tmux socket
 # socket_name: foo

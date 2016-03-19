@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-devops-scripts.yml
 
 name: chef-devops-scripts
-root: ~/workspace/lmn/cookbooks/chef-devops-scripts
+root: ~/workspace/lmn/cookbooks/devops-scripts
 
 # Optional tmux socket
 # socket_name: foo

@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-lmn-base.yml
 
 name: chef-lmn-base
-root: ~/workspace/lmn/cookbooks/chef-lmn-base
+root: ~/workspace/lmn/cookbooks/lmn-base
 
 # Optional tmux socket
 # socket_name: foo

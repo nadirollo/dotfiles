@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-gordo.yml
 
 name: chef-gordo
-root: ~/workspace/lmn/cookbooks/chef-gordo
+root: ~/workspace/lmn/cookbooks/gordo
 
 # Optional tmux socket
 # socket_name: foo

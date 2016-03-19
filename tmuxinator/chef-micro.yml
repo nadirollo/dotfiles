@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-micro.yml
 
 name: chef-micro
-root: ~/workspace/lmn/cookbooks/chef-micro
+root: ~/workspace/lmn/cookbooks/micro
 
 # Optional tmux socket
 # socket_name: foo

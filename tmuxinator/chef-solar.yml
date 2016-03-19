@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-solar.yml
 
 name: chef-solar
-root: ~/workspace/lmn/cookbooks/chef-solar
+root: ~/workspace/lmn/cookbooks/solar
 
 # Optional tmux socket
 # socket_name: foo

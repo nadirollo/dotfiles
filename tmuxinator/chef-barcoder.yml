@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-barcoder.yml
 
 name: chef-barcoder
-root: ~/workspace/lmn/cookbooks/chef-barcoder
+root: ~/workspace/lmn/cookbooks/barcoder
 
 # Optional tmux socket
 # socket_name: foo

@@ -1,7 +1,7 @@
 # ~/.tmuxinator/chef-consul-cluster.yml
 
 name: chef-consul-cluster
-root: ~/workspace/lmn/cookbooks/chef-consul-cluster
+root: ~/workspace/lmn/cookbooks/consul-cluster
 
 # Optional tmux socket
 # socket_name: foo
