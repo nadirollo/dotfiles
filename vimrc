@@ -41,6 +41,8 @@ set expandtab
 set mouse=a
 " Disables things like word wrap and auto-indent
 set paste
+" When opening new vertical buffers, open them on the right
+set splitright
 
 
 
