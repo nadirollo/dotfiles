@@ -103,3 +103,7 @@ setopt hist_ignore_all_dups
 # Don't share the history between tabs
 unsetopt inc_append_history
 unsetopt share_history
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+export PATH=/usr/local/go/bin:$PATH
