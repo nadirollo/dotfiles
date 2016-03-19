@@ -14,6 +14,7 @@ alias f='find . -name'
 alias rs='rsync -avz --partial --progress --rsh=ssh'
 
 # Git aliases
+alias gc='git commit'
 alias gs='git st'
 alias gd='git d'
 alias ga='git add'
