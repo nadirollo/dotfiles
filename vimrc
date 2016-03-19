@@ -43,8 +43,12 @@ set mouse=a
 set paste
 " When opening new vertical buffers, open them on the right
 set splitright
+" Same but for horizontal
+set splitbelow
 
-
+" Chef plugin config
+map <C-g> :ChefFindAnyVsplit<CR>
+map <C-b> :ChefFindAnySplit<CR>
 
 
 " NERDTree Configuration "
