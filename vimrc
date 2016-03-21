@@ -4,55 +4,45 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-" Standard vim defaults
-Plugin 'tpope/vim-sensible'
-" Git commands from vim
-Plugin 'tpope/vim-fugitive'
-" Filesystem explorer
-Plugin 'scrooloose/nerdtree'
-" Solarized color scheme
-Plugin 'altercation/vim-colors-solarized'
-" Autoread files changed outside the buffer
-Plugin 'djoshea/vim-autoread'
-" Better JSON for vim
-Plugin 'elzr/vim-json'
-" Chef navigation
-Plugin 't9md/vim-chef'
-" Tmux + Vim panel navigation seamlessly
-Plugin 'christoomey/vim-tmux-navigator'
-" Comment blocks of code
-Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-sensible'                           " Standard vim defaults
+Plugin 'tpope/vim-fugitive'                           " Git commands from vim
+Plugin 'scrooloose/nerdtree'                          " Filesystem explorer
+Plugin 'altercation/vim-colors-solarized'             " Solarized color scheme
+Plugin 'djoshea/vim-autoread'                         " Autoread files changed outside the buffer
+Plugin 'elzr/vim-json'                                " Better JSON for vim
+Plugin 't9md/vim-chef'                                " Chef navigation
+Plugin 'christoomey/vim-tmux-navigator'               " Tmux + Vim panel navigation seamlessly
+Plugin 'tpope/vim-commentary'                         " Comment blocks of code
+Plugin 'mattn/gist-vim'                               " Create gists from buffer
+Plugin 'mattn/webapi-vim'                             " Interface to WEB APIs
+Plugin 'tpope/surround'                               " Change surrondings
 call vundle#end()
 filetype plugin indent on
 " END
 
 " Personal configs
-" Enable syntax highlighting
-syntax on
-" Highlight matching searches
-set hlsearch
-" Well, ignore case...
-set ignorecase
-" When pasting or opening brackets, try to audoindent
-set autoindent
-" How many columns text is indented with the reindent operations (<< and >>)
-set shiftwidth=2
-" How many columns when you hit Tab in insert mode
-set softtabstop=2
-" Use spaces instead of tabs when hitting Tab
-set expandtab
-" Enable mouse interaction for all modes
-set mouse=a
-" Disables things like word wrap and auto-indent
-set paste
-" When opening new vertical buffers, open them on the right
-set splitright
-" Same but for horizontal
-set splitbelow
-" Set absolute number as the actual line
-set number
-" Set relative numbers
-set relativenumber
+" Disable arrow keys... hjkl!!
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+syntax on              " Enable syntax highlighting
+set hlsearch           " Highlight matching searches
+set ignorecase         " Well, ignore case...
+set autoindent         " When pasting or opening brackets, try to audoindent
+set shiftwidth=2       " How many columns text is indented with the reindent operations (<< and >>)
+set softtabstop=2      " How many columns when you hit Tab in insert mode
+set expandtab          " Use spaces instead of tabs when hitting Tab
+set mouse=a            " Enable mouse interaction for all modes
+set paste              " Disables things like word wrap and auto-indent
+set splitright         " When opening new vertical buffers, open them on the right
+set splitbelow         " Same but for horizontal
+set number             " Set absolute number as the actual line
+set relativenumber     " Set relative numbers
+set showcmd            " Show commands always
+
+
 
 " NERDTree Configuration "
 " Open filesystem navigator if no file is specified
