@@ -18,6 +18,10 @@ Plugin 'djoshea/vim-autoread'
 Plugin 'elzr/vim-json'
 " Chef navigation
 Plugin 't9md/vim-chef'
+" Tmux + Vim panel navigation seamlessly
+Plugin 'christoomey/vim-tmux-navigator'
+" Comment blocks of code
+Plugin 'tpope/vim-commentary'
 call vundle#end()
 filetype plugin indent on
 " END
@@ -45,11 +49,10 @@ set paste
 set splitright
 " Same but for horizontal
 set splitbelow
-
-" Chef plugin config
-map <C-g> :ChefFindAnyVsplit<CR>
-map <C-b> :ChefFindAnySplit<CR>
-
+" Set absolute number as the actual line
+set number
+" Set relative numbers
+set relativenumber
 
 " NERDTree Configuration "
 " Open filesystem navigator if no file is specified
@@ -81,4 +84,8 @@ call NERDTreeHighlightFile('sh', 'Red', 'none', 'red', '#151515')
 " Shortcuts
 " Open filesystem tree navigation with Ctrl + N
 map <C-n> :NERDTreeToggle<CR>
+
+" Chef plugin config
+map <C-g> :ChefFindAnyVsplit<CR>
+map <C-b> :ChefFindAnySplit<CR>
 
