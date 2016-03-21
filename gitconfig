@@ -1,4 +1,7 @@
 # vim: filetype=gitconfig
+# Go glide shenanigans
+#[url "git@github.com:"]
+#  insteadOf = https://github.com/'
 
 [user]
   name = Nadir Lloret
@@ -51,6 +54,5 @@
   changed   = green
   untracked = cyan
 
-# Go glide shenanigans
 [url "git@github.com:"]
-  insteadOf = https://github.com/'
+	insteadOf = https://github.com/
