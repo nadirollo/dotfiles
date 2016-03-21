@@ -106,4 +106,4 @@ unsetopt share_history
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-export PATH=/usr/local/go/bin:$PATH
+export GOPATH=~/workspace/lmn/go
