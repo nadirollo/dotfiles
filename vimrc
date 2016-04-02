@@ -28,6 +28,8 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 syntax on              " Enable syntax highlighting
+set background=dark    " Selfexplanatory, ain't it?
+colorscheme solarized  " Enable solarized colorscheme
 set hlsearch           " Highlight matching searches
 set ignorecase         " Well, ignore case...
 set autoindent         " When pasting or opening brackets, try to audoindent
