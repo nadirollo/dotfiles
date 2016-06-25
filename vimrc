@@ -15,7 +15,7 @@ Plugin 'christoomey/vim-tmux-navigator'               " Tmux + Vim panel navigat
 Plugin 'tpope/vim-commentary'                         " Comment blocks of code
 Plugin 'mattn/gist-vim'                               " Create gists from buffer
 Plugin 'mattn/webapi-vim'                             " Interface to WEB APIs
-Plugin 'tpope/surround'                               " Change surrondings
+Plugin 'tpope/vim-surround'                           " Change surrondings
 call vundle#end()
 filetype plugin indent on
 " END
@@ -80,4 +80,3 @@ map <C-n> :NERDTreeToggle<CR>
 " Chef plugin config
 map <C-g> :ChefFindAnyVsplit<CR>
 map <C-b> :ChefFindAnySplit<CR>
-
