@@ -1,7 +1,7 @@
-# ~/.tmuxinator/chef-micro.yml
+# ~/.tmuxinator/terra.yml
 
-name: chef-micro
-root: ~/workspace/lmn/cookbooks/micro
+name: terra
+root: ~/workspace/lmn/aws-roles
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,11 +25,12 @@ root: ~/workspace/lmn/cookbooks/micro
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t chef-micro
+# post: tmux -CC attach -t terra
 
 windows:
   - editor:
-      layout: a9d4,181x35,0,0[181x27,0,0,0,181x7,0,28,2]
+      layout: a59b,364x74,0,0{182x74,0,0,54,181x74,183,0[181x37,183,0,57,181x36,183,38,58]}
       panes:
-        - vim -O recipes/default.rb attributes/default.rb
         - 
+        - 
+        -

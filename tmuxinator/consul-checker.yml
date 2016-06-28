@@ -1,7 +1,7 @@
-# ~/.tmuxinator/chef-micro.yml
+# ~/.tmuxinator/consul-checker.yml
 
-name: chef-micro
-root: ~/workspace/lmn/cookbooks/micro
+name: consul-checker
+root: ~/workspace/lmn/chef-repo/aws/consul_healthchecker
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,11 +25,11 @@ root: ~/workspace/lmn/cookbooks/micro
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t chef-micro
+# post: tmux -CC attach -t consul-checker
 
 windows:
   - editor:
       layout: a9d4,181x35,0,0[181x27,0,0,0,181x7,0,28,2]
       panes:
-        - vim -O recipes/default.rb attributes/default.rb
+        - vim consul_healthchecker.py
         - 
