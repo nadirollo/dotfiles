@@ -10,7 +10,6 @@ Plugin 'scrooloose/nerdtree'                          " Filesystem explorer
 Plugin 'altercation/vim-colors-solarized'             " Solarized color scheme
 Plugin 'djoshea/vim-autoread'                         " Autoread files changed outside the buffer
 Plugin 'elzr/vim-json'                                " Better JSON for vim
-Plugin 't9md/vim-chef'                                " Chef navigation
 Plugin 'christoomey/vim-tmux-navigator'               " Tmux + Vim panel navigation seamlessly
 Plugin 'tpope/vim-commentary'                         " Comment blocks of code
 Plugin 'mattn/gist-vim'                               " Create gists from buffer
@@ -33,8 +32,8 @@ colorscheme solarized  " Enable solarized colorscheme
 set hlsearch           " Highlight matching searches
 set ignorecase         " Well, ignore case...
 set autoindent         " When pasting or opening brackets, try to audoindent
-set shiftwidth=2       " How many columns text is indented with the reindent operations (<< and >>)
-set softtabstop=2      " How many columns when you hit Tab in insert mode
+set shiftwidth=4       " How many columns text is indented with the reindent operations (<< and >>)
+set softtabstop=4      " How many columns when you hit Tab in insert mode
 set expandtab          " Use spaces instead of tabs when hitting Tab
 set mouse=a            " Enable mouse interaction for all modes
 set paste              " Disables things like word wrap and auto-indent
@@ -76,7 +75,3 @@ call NERDTreeHighlightFile('sh', 'Red', 'none', 'red', '#151515')
 " Shortcuts
 " Open filesystem tree navigation with Ctrl + N
 map <C-n> :NERDTreeToggle<CR>
-
-" Chef plugin config
-map <C-g> :ChefFindAnyVsplit<CR>
-map <C-b> :ChefFindAnySplit<CR>
