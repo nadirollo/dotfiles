@@ -15,10 +15,11 @@ alias rs='rsync -avz --partial --progress --rsh=ssh'
 
 # Git aliases
 alias gc='git commit'
+alias gp='git pull'
 alias gs='git st'
-alias gd='git d'
+alias gd='git diff'
 alias ga='git add'
-alias gc='git checkout'
+alias gco='git checkout'
 alias gl='git l'
 alias bl='git l master..HEAD'
 
