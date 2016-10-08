@@ -17,6 +17,9 @@ Plugin 'mattn/webapi-vim'                             " Interface to WEB APIs
 Plugin 'tpope/vim-surround'                           " Change surrondings
 Plugin 'vim-scripts/indentpython.vim'                 " PEP Standards
 Plugin 'ConradIrwin/vim-bracketed-paste'              " Automatic :set paste when ... well, pasting in insert mode
+Plugin 'vim-airline/vim-airline'                      " Status line
+Plugin 'vim-airline/vim-airline-themes'               " Status line themes
+Plugin 'davidhalter/jedi-vim'                         " Autocompletion
 call vundle#end()
 filetype plugin indent on
 " END
@@ -65,6 +68,8 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set wildmenu                   " display all possibilities on autocomplete.
 set wildmode=longest,list
 
+" ---- Status Bar ----
+:let g:airline_powerline_fonts = 1
 
 " NERDTree Configuration "
 " Open filesystem navigator if no file is specified
