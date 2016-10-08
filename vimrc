@@ -15,7 +15,7 @@ Plugin 'tpope/vim-commentary'                         " Comment blocks of code
 Plugin 'mattn/gist-vim'                               " Create gists from buffer
 Plugin 'mattn/webapi-vim'                             " Interface to WEB APIs
 Plugin 'tpope/vim-surround'                           " Change surrondings
-Plugin 'vim-scripts/indentpython.vim'                 " PEP Standards
+Plugin 'nvie/vim-flake8'                              " PEP8 syntax and style checker
 Plugin 'ConradIrwin/vim-bracketed-paste'              " Automatic :set paste when ... well, pasting in insert mode
 Plugin 'vim-airline/vim-airline'                      " Status line
 Plugin 'vim-airline/vim-airline-themes'               " Status line themes
@@ -49,7 +49,7 @@ set number             " Set absolute number as the actual line
 set relativenumber     " Set relative numbers
 set showcmd            " Show commands always
 set showmatch          " Highlight matching brackes/shobraces
-set colorcolumn=80
+set colorcolumn=100
 
 " visualize stuff.
 set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:·
