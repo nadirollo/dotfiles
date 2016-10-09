@@ -20,6 +20,7 @@ Plugin 'ConradIrwin/vim-bracketed-paste'              " Automatic :set paste whe
 Plugin 'vim-airline/vim-airline'                      " Status line
 Plugin 'vim-airline/vim-airline-themes'               " Status line themes
 Plugin 'davidhalter/jedi-vim'                         " Autocompletion
+Plugin 'ctrlpvim/ctrlp.vim'                           " Fuzzy search files/buffers/mru/tags...
 call vundle#end()
 filetype plugin indent on
 " END
@@ -62,7 +63,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Do not pollute the working directory with swap and other files.
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
 
 " ---- File Navigation ----
 set wildmenu                   " display all possibilities on autocomplete.
