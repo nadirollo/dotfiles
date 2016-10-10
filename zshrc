@@ -49,7 +49,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew hub tmux tmuxinator knife aws docker)
+plugins=(github brew tmux tmuxinator knife aws docker)
 
 # User configuration
 
@@ -107,3 +107,7 @@ unsetopt share_history
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 export GOPATH=~/workspace/lmn/go
+
+eval "$(hub alias -s)"
+
+aws-list-instances() { aws ec2 describe-instances --filters "Name=tag:Name,Values=*$1*" --query 'Reservations[].Instances[].[Tags[?Key==`Name`].Value[]]' --output text }
