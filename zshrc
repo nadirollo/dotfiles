@@ -49,7 +49,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(github brew tmux tmuxinator knife aws docker)
+plugins=(github brew tmux tmuxinator aws docker terraform nomad)
 
 # User configuration
 
@@ -57,7 +57,7 @@ if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
   FPATH=/usr/local/share/zsh/site-functions:$FPATH
 fi
 
-export PATH="/Users/nadir/workspace/bin/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="/Users/nadir/workspace/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -111,3 +111,18 @@ export GOPATH=~/workspace/lmn/go
 eval "$(hub alias -s)"
 
 aws-list-instances() { aws ec2 describe-instances --filters "Name=tag:Name,Values=*$1*" --query 'Reservations[].Instances[].[Tags[?Key==`Name`].Value[]]' --output text }
+
+function exists { which $1 &> /dev/null }
+
+if exists peco; then
+   function percol_select_history() {
+       local tac
+       exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+       BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+       CURSOR=$#BUFFER         # move cursor
+       zle -R -c               # refresh
+   }
+
+ zle -N percol_select_history
+ bindkey '^R' percol_select_history
+fi
