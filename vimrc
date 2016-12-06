@@ -21,6 +21,7 @@ Plugin 'vim-airline/vim-airline'                      " Status line
 Plugin 'vim-airline/vim-airline-themes'               " Status line themes
 Plugin 'davidhalter/jedi-vim'                         " Autocompletion
 Plugin 'ctrlpvim/ctrlp.vim'                           " Fuzzy search files/buffers/mru/tags...
+Plugin 'hashivim/vim-terraform'                       " Terraform syntax highlighting
 call vundle#end()
 filetype plugin indent on
 " END
