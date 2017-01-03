@@ -1,7 +1,7 @@
-# ~/.tmuxinator/chef-zebra.yml
+# ~/.tmuxinator/lithium.yml
 
-name: chef-zebra
-root: ~/workspace/lmn/cookbooks/zebra
+name: lithium
+root: ~/workspace/cs/lithium
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,11 +25,11 @@ root: ~/workspace/lmn/cookbooks/zebra
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t chef-zebra
+# post: tmux -CC attach -t lithium
 
 windows:
   - editor:
       layout: a9d4,181x35,0,0[181x27,0,0,0,181x7,0,28,2]
       panes:
-        - vim -O recipes/default.rb attributes/default.rb metadata.rb
-        - 
+        -
+        -

@@ -1,7 +1,7 @@
-# ~/.tmuxinator/chef-luigi.yml
+# ~/.tmuxinator/build-images.yml
 
-name: chef-luigi
-root: ~/workspace/lmn/cookbooks/luigi
+name: build-images
+root: ~/workspace/cs/image-factory
 
 # Optional tmux socket
 # socket_name: foo
@@ -10,7 +10,7 @@ root: ~/workspace/lmn/cookbooks/luigi
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
+pre_window: export AWS_PROFILE="clearscore"
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -25,11 +25,14 @@ root: ~/workspace/lmn/cookbooks/luigi
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t chef-zebra
+# post: tmux -CC attach -t build-images
 
 windows:
   - editor:
-      layout: a9d4,181x35,0,0[181x27,0,0,0,181x7,0,28,2]
+      layout: 1f5b,238x53,0,0{119x53,0,0[119x26,0,0,25,119x26,0,27,31],118x53,120,0[118x26,120,0,29,118x26,120,27,30]}
       panes:
-        - vim -O recipes/default.rb attributes/default.rb metadata.rb
-        - 
+        -
+        -
+        -
+        -
+
