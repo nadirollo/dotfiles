@@ -69,6 +69,12 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set wildmenu                   " display all possibilities on autocomplete.
 set wildmode=longest,list
 
+let g:ctrlp_working_path_mode = 'ra' " Fuzzy search starting on the current directory
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|venv)$',
+  \ 'file': '\v\.(pyc)$'
+  \ } " Ignore some files
+
 " ---- Status Bar ----
 :let g:airline_powerline_fonts = 1
 
