@@ -106,7 +106,7 @@ unsetopt share_history
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-export GOPATH=~/workspace/lmn/go
+export GOPATH=~/workspace/go
 
 eval "$(hub alias -s)"
 
