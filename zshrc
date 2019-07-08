@@ -126,3 +126,6 @@ if exists peco; then
  zle -N percol_select_history
  bindkey '^R' percol_select_history
 fi
+
+function gitignore() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
