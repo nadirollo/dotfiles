@@ -15,13 +15,13 @@ Plugin 'tpope/vim-commentary'                         " Comment blocks of code
 Plugin 'mattn/gist-vim'                               " Create gists from buffer
 Plugin 'mattn/webapi-vim'                             " Interface to WEB APIs
 Plugin 'tpope/vim-surround'                           " Change surrondings
-Plugin 'nvie/vim-flake8'                              " PEP8 syntax and style checker
 Plugin 'ConradIrwin/vim-bracketed-paste'              " Automatic :set paste when ... well, pasting in insert mode
 Plugin 'vim-airline/vim-airline'                      " Status line
 Plugin 'vim-airline/vim-airline-themes'               " Status line themes
-Plugin 'davidhalter/jedi-vim'                         " Autocompletion
 Plugin 'ctrlpvim/ctrlp.vim'                           " Fuzzy search files/buffers/mru/tags...
 Plugin 'hashivim/vim-terraform'                       " Terraform syntax highlighting
+" Plugin 'davidhalter/jedi-vim'                         " Autocompletion
+" Plugin 'nvie/vim-flake8'                              " PEP8 syntax and style checker
 call vundle#end()
 filetype plugin indent on
 " END
@@ -54,7 +54,8 @@ set showmatch          " Highlight matching brackes/shobraces
 set colorcolumn=100
 
 " visualize stuff.
-set listchars=tab:→\ ,extends:»,precedes:«,trail:▒,nbsp:·
+set listchars=tab:→\ ,nbsp:␣,precedes:«,extends:»
+set list
 
 " on editing, jump to last known cursor position.
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
@@ -71,7 +72,7 @@ set wildmode=longest,list
 
 let g:ctrlp_working_path_mode = 'ra' " Fuzzy search starting on the current directory
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|venv)$',
+  \ 'dir':  '\v[\/](\.git|venv/.terraform)$',
   \ 'file': '\v\.(pyc)$'
   \ } " Ignore some files
 
@@ -91,7 +92,7 @@ endfunction
 
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
 call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', 'blue', '#151515')
 call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
@@ -104,7 +105,19 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('py', 'Magenta', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('rb', 'Magenta', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('sh', 'Red', 'none', 'red', '#151515')
+call NERDTreeHighlightFile('txt', 'White', 'none', 'white', '#151515')
 
 " Shortcuts
 " Open filesystem tree navigation with Ctrl + N
 map <C-n> :NERDTreeToggle<CR>
+" List opened buffers
+map <C-b> :ls<CR>
+" Tab movement
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
