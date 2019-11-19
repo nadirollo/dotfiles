@@ -2,7 +2,7 @@
 [user]
   name = Nadir Lloret
   email = nadir.lloret@gmail.com
-	signingkey = 2E92F96514E008D8
+  signingkey = 2E92F96514E008D8
 
 [filter "lfs"]
   clean = git-lfs clean %f
@@ -52,4 +52,4 @@
 [github]
   user = nadirollo
 [commit]
-	gpgsign = false
+  gpgsign = false

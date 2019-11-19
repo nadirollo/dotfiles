@@ -1,7 +1,7 @@
-# ~/.tmuxinator/wks-terraform.yml
+# ~/.tmuxinator/wks-readsoft.yml
 
-name: wks-tf-accounts
-root: ~/workspace/wks/terraform/aws-accounts
+name: wks-readsoft
+root: ~/workspace/wks/serverless/readsoft-technical-service
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,12 +28,11 @@ root: ~/workspace/wks/terraform/aws-accounts
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t wks-terraform
+# post: tmux -CC attach -t wks-demo
 
 windows:
   - editor:
-      - export AWS_PROFILE=wickes-master
-      - clear
+      layout: main-vertical
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after

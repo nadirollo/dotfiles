@@ -1,0 +1,10 @@
+# ~/.tmuxinator/wks-hgapp.yml
+
+name: nlb-hgapp
+root: ~/workspace/nlb/sentella/hg-app
+
+windows:
+  - editor:
+      -
+  - serve:
+     - npm run serve

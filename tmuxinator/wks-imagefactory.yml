@@ -1,7 +1,7 @@
-# ~/.tmuxinator/wks-terraform.yml
+# ~/.tmuxinator/imagefactory.yml
 
-name: wks-tf-accounts
-root: ~/workspace/wks/terraform/aws-accounts
+name: wks-imagefactory
+root: ~/workspace/wks/imagefactory
 
 # Optional tmux socket
 # socket_name: foo

@@ -1,0 +1,8 @@
+# ~/.tmuxinator/wks-precommit.yml
+
+name: wks-precommit
+root: ~/workspace/wks/terraform/pre-commit-hooks
+
+windows:
+  - editor:
+      layout: main-vertical

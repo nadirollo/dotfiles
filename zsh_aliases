@@ -23,6 +23,7 @@ alias ga='git add'
 alias gco='git checkout'
 alias gl='git l'
 alias bl='git l master..HEAD'
+alias gmr='git push -u origin head -o merge_request.create -o merge_request.remove_source_branch'
 
 # tmux aliases
 alias tmux='tmux -2'

@@ -49,7 +49,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(github brew tmux tmuxinator aws docker terraform nomad vault zsh-syntax-highlighting)
+plugins=(github brew tmux tmuxinator aws docker terraform nomad vault)
 
 # User configuration
 
@@ -57,9 +57,9 @@ if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
   FPATH=/usr/local/share/zsh/site-functions:$FPATH
 fi
 
-export PATH="/Users/nadir/workspace/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="/Users/nadir/workspace/bin:/Users/nadir/workspace/personal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
+export ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -92,7 +92,7 @@ DEFAULT_USER=nadir
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 ###########
-# HISTORY #
+# HISTORY #
 ###########
 # Huge history
 export HISTSIZE=10000
@@ -105,6 +105,8 @@ unsetopt inc_append_history
 unsetopt share_history
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+test -e ${HOME}/.tmuxinator.zsh && source ${HOME}/.tmuxinator.zsh
+
 
 export GOPATH=~/workspace/go
 
@@ -129,3 +131,15 @@ fi
 
 function gitignore() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
+function bejen_loves_jenkins() {
+    bejen_affair=/Users/nadir/workspace/personal/bejen_jenkins_affair.json
+    tmp=$(mktemp)
+    if [[ "$1" == "yes" ]] then
+        jq '{"love": (.love + 1), "hate": .hate}' "$bejen_affair" > "$tmp" && mv "$tmp" "$bejen_affair"
+    elif [[ "$1" == "no" ]] then
+        jq '{"love": .love, "hate": (.hate +1)}' "$bejen_affair" > "$tmp" && mv "$tmp" "$bejen_affair"
+    fi
+    loves=$(jq .love $bejen_affair)
+    hates=$(jq .hate $bejen_affair)
+    echo "Loved it $loves out of $(( $loves + $hates ))"
+}

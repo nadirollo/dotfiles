@@ -1,0 +1,105 @@
+;
+; Sentella Org
+;
+
+
+[sentella_org]
+aws_account_id = sentella-identity
+target_role_name = sts_devops
+
+[profile master]
+aws_account_id = 274892615619
+region=eu-west-1
+source_profile = sentella_org
+color = 000000
+
+[profile management]
+aws_account_id = 008364004639
+region=eu-west-1
+source_profile = sentella_org
+color = f2bf1d
+
+[profile logs]
+aws_account_id = 929566286657
+region=eu-west-1
+source_profile = sentella_org
+color = f2bf1d
+
+[profile happydog]
+aws_account_id = 929566286657
+region=eu-west-1
+source_profile = sentella_org
+color = f24800
+
+;
+; Wickes Org
+;
+
+[wickes_org]
+aws_account_id = wickes-identity
+target_role_name = sts_devops
+
+[profile master]
+aws_account_id = 201024128453
+region=eu-west-1
+source_profile = wickes_org
+color = 000000
+
+[profile core (prod)]
+aws_account_id = 458472497319
+region=eu-west-1
+source_profile = wickes_org
+color = f2bf1d
+
+[profile dcapps (prod)]
+aws_account_id = 816307133091
+region=eu-west-1
+source_profile = wickes_org
+color = f2bf1d
+
+[profile core (nonprod)]
+aws_account_id = 735245996681
+region=eu-west-1
+source_profile = wickes_org
+color = 8cdcff
+
+[profile dcapps (nonprod)]
+aws_account_id = 459705047117
+region=eu-west-1
+source_profile = wickes_org
+color = 8cdcff
+
+;
+; Wickes Microservices
+;
+
+[wickes_microservices]
+aws_account_id = wickes-shared
+target_role_name = CAS-DevOps
+
+[profile dev]
+aws_account_id = wickes-dev
+region=eu-west-1
+source_profile = wickes_microservices
+color = 76d472
+
+[profile test]
+aws_account_id = wickes-test
+region=eu-west-1
+source_profile = wickes_microservices
+color = 76d472
+
+[profile preprod]
+aws_account_id = wickes-preprod
+region=eu-west-1
+source_profile = wickes_microservices
+color = d4a860
+
+[profile prod]
+aws_account_id = wickes-prod
+region=eu-west-1
+source_profile = wickes_microservices
+color = d42322
+
+
+
