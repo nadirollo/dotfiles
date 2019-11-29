@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/nadir/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -57,10 +57,11 @@ if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
   FPATH=/usr/local/share/zsh/site-functions:$FPATH
 fi
 
-export PATH="/Users/nadir/workspace/bin:/Users/nadir/workspace/personal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="$HOME/workspace/bin:$HOME/workspace/personal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 export ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -86,7 +87,7 @@ source ~/.zsh_aliases
 # The same as cat but with colored output, requires python library pygmentize
 
 # Set default user to hide the user@hostname when running on zsh on the workstation
-DEFAULT_USER=nadir
+DEFAULT_USER=r2d2
 
 # LS colors for solarized dark
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
@@ -106,7 +107,7 @@ unsetopt share_history
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 test -e ${HOME}/.tmuxinator.zsh && source ${HOME}/.tmuxinator.zsh
-
+test -e /usr/local/aws/bin/aws_zsh_completer.sh && source /usr/local/aws/bin/aws_zsh_completer.sh
 
 export GOPATH=~/workspace/go
 
@@ -132,7 +133,7 @@ fi
 function gitignore() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
 function bejen_loves_jenkins() {
-    bejen_affair=/Users/nadir/workspace/personal/bejen_jenkins_affair.json
+    bejen_affair=$HOME/workspace/personal/bejen_jenkins_affair.json
     tmp=$(mktemp)
     if [[ "$1" == "yes" ]] then
         jq '{"love": (.love + 1), "hate": .hate}' "$bejen_affair" > "$tmp" && mv "$tmp" "$bejen_affair"
