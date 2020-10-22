@@ -1,7 +1,7 @@
 # ~/.tmuxinator/wks-ami-builder.yml
 
 name: wks-ami-builder
-root: ~/workspace/wks/ami-builder
+root: ~/workspace/wks/microservices/devops/ami-builder
 
 windows:
   - editor:
@@ -9,4 +9,4 @@ windows:
       panes:
         -
         - molecule:
-            - docker-compose -f docker-compose.yml run ami-builder
+            - docker-compose -f docker/docker-compose.yml run ami-builder

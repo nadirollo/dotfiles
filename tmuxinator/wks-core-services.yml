@@ -1,7 +1,7 @@
-# ~/.tmuxinator/wks-ami.yml
+# ~/.tmuxinator/wks-core-services.yml
 
-name: wks-ami
-root: ~/workspace/wks/microservices/devops/ami-builder
+name: wks-core-services
+root: ~/workspace/wks/terraform/core-services
 
 # Optional tmux socket
 # socket_name: foo
@@ -13,7 +13,7 @@ root: ~/workspace/wks/microservices/devops/ami-builder
 # pre_window: rbenv shell 2.0.0-p247
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
-# tmux_options: -f ~/.tmux.mac.conf
+tmux_options: -vv
 
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
@@ -28,15 +28,13 @@ root: ~/workspace/wks/microservices/devops/ami-builder
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t wks-ami
+# post: tmux -CC attach -t wks-terraform
 
 windows:
   - editor:
-      layout: main-vertical
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
+      layout: main-horizontal
       panes:
-        -
         - molecule:
-            - docker-compose -f docker/docker-compose.yml run ami-builder
+            - docker-compose run terragrunt
+        - git:
+            -

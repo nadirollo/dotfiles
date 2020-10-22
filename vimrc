@@ -20,6 +20,7 @@ Plugin 'vim-airline/vim-airline'                      " Status line
 Plugin 'vim-airline/vim-airline-themes'               " Status line themes
 Plugin 'ctrlpvim/ctrlp.vim'                           " Fuzzy search files/buffers/mru/tags...
 Plugin 'hashivim/vim-terraform'                       " Terraform syntax highlighting
+Plugin 'b4b4r07/vim-hcl'                              " HCL syntax highlighting
 " Plugin 'davidhalter/jedi-vim'                         " Autocompletion
 " Plugin 'nvie/vim-flake8'                              " PEP8 syntax and style checker
 call vundle#end()

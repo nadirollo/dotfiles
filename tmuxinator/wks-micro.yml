@@ -1,7 +1,7 @@
 # ~/.tmuxinator/wks-micro.yml
 
 name: wks-micro
-root: ~/workspace/wks/microservices-infrastructure/
+root: ~/workspace/wks/microservices/devops/microservices-infrastructure/
 windows:
   - editor:
       layout: main-horizontal

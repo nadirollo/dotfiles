@@ -132,15 +132,4 @@ fi
 
 function gitignore() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
-function bejen_loves_jenkins() {
-    bejen_affair=$HOME/workspace/personal/bejen_jenkins_affair.json
-    tmp=$(mktemp)
-    if [[ "$1" == "yes" ]] then
-        jq '{"love": (.love + 1), "hate": .hate}' "$bejen_affair" > "$tmp" && mv "$tmp" "$bejen_affair"
-    elif [[ "$1" == "no" ]] then
-        jq '{"love": .love, "hate": (.hate +1)}' "$bejen_affair" > "$tmp" && mv "$tmp" "$bejen_affair"
-    fi
-    loves=$(jq .love $bejen_affair)
-    hates=$(jq .hate $bejen_affair)
-    echo "Loved it $loves out of $(( $loves + $hates ))"
-}
+export PATH="/usr/local/opt/awscli@1/bin:$PATH"

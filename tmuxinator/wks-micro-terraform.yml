@@ -1,7 +1,7 @@
 # ~/.tmuxinator/wks-micro-terraform.yml
 
 name: wks-micro-terraform
-root: ~/workspace/wks/micro-terraform
+root: ~/workspace/wks/microservices/devops/terraform
 
 windows:
   - editor:

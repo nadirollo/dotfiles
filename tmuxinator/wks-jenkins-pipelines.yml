@@ -1,7 +1,7 @@
-# ~/.tmuxinator/wks-demo.yml
+# ~/.tmuxinator/wks-jenkins-pipelines.yml
 
-name: wks-promote-jenkins
-root: ~/workspace/wks/promote-jenkin
+name: wks-jenkins-pipelines
+root: ~/workspace/wks/microservices/devops/jenkins-pipelines
 
 # Optional tmux socket
 # socket_name: foo

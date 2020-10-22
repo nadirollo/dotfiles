@@ -1,7 +1,7 @@
 # ~/.tmuxinator/wks-jenkins-slaves.yml
 
 name: wks-jenkins-slaves
-root: ~/workspace/wks/jenkins-slaves
+root: ~/workspace/wks/microservices/devops/jenkins-slaves
 
 # Optional tmux socket
 # socket_name: foo
