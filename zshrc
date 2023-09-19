@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -5,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +51,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(github brew tmux tmuxinator aws docker terraform nomad vault)
+plugins=(brew tmux tmuxinator aws docker docker-compose terraform nomad vault golang shrink-path kubectl)
 
 # User configuration
 
@@ -58,9 +60,15 @@ if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
 fi
 
 export PATH="$HOME/workspace/bin:$HOME/workspace/personal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="$PATH:/opt/puppetlabs/bolt/bin"
+export PATH="$PATH:/$HOME/workspace/raqu/tooling/provisioner"
+export PATH="$PATH:/$HOME/workspace/raqu/tooling/deployer"
 # export MANPATH="/usr/local/man:$MANPATH"
 export ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
+# Disable sharing history between tabs
+unsetopt inc_append_history
+unsetopt share_history
 
 
 # You may need to manually set your language environment
@@ -110,26 +118,40 @@ test -e ${HOME}/.tmuxinator.zsh && source ${HOME}/.tmuxinator.zsh
 test -e /usr/local/aws/bin/aws_zsh_completer.sh && source /usr/local/aws/bin/aws_zsh_completer.sh
 
 export GOPATH=~/workspace/go
+export PATH="$GOPATH/bin:$PATH"
 
-eval "$(hub alias -s)"
+## Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+fpath=(~/.awsume/zsh-autocomplete/ $fpath)
 
-aws-list-instances() { aws ec2 describe-instances --filters "Name=tag:Name,Values=*$1*" --query 'Reservations[].Instances[].[Tags[?Key==`Name`].Value[]]' --output text }
+# Automatic terraform/terragrunt version selector
+load-tfswitch() {
+  if [ -f ".tfswitchrc" ] || [ -f ".terraform-version" ] || [ -f ".tfswitch.toml" ] || [ -f "version.tf" ] || [ -f "providers.tf" ]; then
+    tfswitch
+  fi
+}
+load-tgswitch() {
+  if [ -f ".tgswitchrc" ] || [ -f ".terragrunt-version" ] || [ -f ".tgswitch.toml" ]; then
+    tgswitch
+  fi
+}
+add-zsh-hook chpwd load-tfswitch
+add-zsh-hook chpwd load-tgswitch
+load-tfswitch
+load-tgswitch
 
-function exists { which $1 &> /dev/null }
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/nomad nomad
+prompt_aws(){}
 
-if exists peco; then
-   function percol_select_history() {
-       local tac
-       exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
-       BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
-       CURSOR=$#BUFFER         # move cursor
-       zle -R -c               # refresh
-   }
-
- zle -N percol_select_history
- bindkey '^R' percol_select_history
+if [ $TERM_PROGRAM != "Terminal.app" ]; then
+  eval "$(oh-my-posh init zsh)"
 fi
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
-function gitignore() { curl -L -s https://www.gitignore.io/api/$@ ;}
+source ~/.zsh_custom_functions
 
-export PATH="/usr/local/opt/awscli@1/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

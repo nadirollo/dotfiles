@@ -5,7 +5,9 @@ alias pg='ps aux | egrep -i'
 alias dog='pygmentize -g'
 
 # Output extra info, hidden files, unit suffixes and symbols after each type of file
-alias ll='ls -lahF'
+alias ls='exa --icons --group-directories-first'
+alias ll='exa -l --icons --no-user --group-directories-first  --time-style long-iso'
+alias la='exa -la --icons --no-user --group-directories-first  --time-style long-iso'
 
 # Find files
 alias f='find . -name'
@@ -40,3 +42,7 @@ alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias jbug="jira -a createIssue --project IN --type Bug --assignee '' --summary "
 alias jstory="jira -a createIssue --project IN --type Story --assignee '' --summary "
 alias jepic="jira -a createIssue --project IN --type Epic --assignee '' --summary "
+
+alias vscode="code"
+alias awsume="source awsume"
+
