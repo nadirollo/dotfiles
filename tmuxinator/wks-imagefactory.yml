@@ -1,7 +1,0 @@
-# ~/.tmuxinator/imagefactory.yml
-
-name: wks-imagefactory
-root: ~/workspace/wks/imagefactory
-windows:
-  - editor:
-      - docker-compose run ami-builder

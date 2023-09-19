@@ -1,0 +1,12 @@
+# ~/.tmuxinator/rq-image-factory.yml
+
+name: rq-image-factory
+root: ~/workspace/raqu/image-factory
+windows:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - builder:
+            - docker compose run builder
+        - git:
+            -
