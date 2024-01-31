@@ -60,9 +60,7 @@ if (( ! ${fpath[(I)/usr/local/share/zsh/site-functions]} )); then
 fi
 
 export PATH="$HOME/workspace/bin:$HOME/workspace/personal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
-export PATH="$PATH:/opt/puppetlabs/bolt/bin"
-export PATH="$PATH:/$HOME/workspace/raqu/tooling/provisioner"
-export PATH="$PATH:/$HOME/workspace/raqu/tooling/deployer"
+export PATH="/opt/homebrew/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 export ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
